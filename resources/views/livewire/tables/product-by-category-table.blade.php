@@ -3,7 +3,7 @@
         <div class="card-header">
             <div>
                 <h3 class="card-title">
-                    Category: {{ $category->name }}
+                    Categoría: {{ $category->name }}
                 </h3>
             </div>
 
@@ -17,7 +17,7 @@
                     <div class="dropdown-menu dropdown-menu-end" style="">
                         <a href="{{ route('products.create', ['category' => $category]) }}" class="dropdown-item">
                             <x-icon.plus/>
-                            {{ __('Add Product') }}
+                            {{ __('Agregar Producto') }}
                         </a>
                     </div>
                 </div>
@@ -29,19 +29,19 @@
         <div class="card-body border-bottom py-3">
             <div class="d-flex">
                 <div class="text-secondary">
-                    Show
+                    Mostrar
                     <div class="mx-2 d-inline-block">
                         <select wire:model.live="perPage" class="form-select form-select-sm" aria-label="result per page">
-                            <option value="5">5</option>
-                            <option value="10">10</option>
-                            <option value="15">15</option>
-                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                            <option value="150">150</option>
+                            <option value="250">250</option>
                         </select>
                     </div>
-                    entries
+                    registros
                 </div>
                 <div class="ms-auto text-secondary">
-                    Search:
+                    Buscar:
                     <div class="ms-2 d-inline-block">
                         <input type="text" wire:model.live="search" class="form-control form-control-sm" aria-label="Search invoice">
                     </div>
@@ -60,24 +60,24 @@
                     </th>
                     <th scope="col" class="align-middle text-center">
                         <a wire:click.prevent="sortBy('name')" href="#" role="button">
-                            {{ __('Product Name') }}
+                            {{ __('Nombre') }}
                             @include('inclues._sort-icon', ['field' => 'name'])
                         </a>
                     </th>
                     <th scope="col" class="align-middle text-center d-none d-sm-table-cell">
                         <a wire:click.prevent="sortBy('code')" href="#" role="button">
-                            {{ __('Product Code') }}
+                            {{ __('Código') }}
                             @include('inclues._sort-icon', ['field' => 'code'])
                         </a>
                     </th>
                     <th scope="col" class="align-middle text-center d-none d-sm-table-cell">
                         <a wire:click.prevent="sortBy('quantity')" href="#" role="button">
-                            {{ __('Product Quantity') }}
+                            {{ __('Cantidad') }}
                             @include('inclues._sort-icon', ['field' => 'quantity'])
                         </a>
                     </th>
                     <th scope="col" class="align-middle text-center">
-                        {{ __('Action') }}
+                        {{ __('Acciones') }}
                     </th>
                 </tr>
                 </thead>
@@ -105,16 +105,15 @@
                 @empty
                     <tr>
                         <td class="align-middle text-center" colspan="8">
-                            No results found
+                            No se encontraron resultados
                         </td>
                     </tr>
                 @endforelse
                 </tbody>
             </table>
         </div>
-        <div class="card-footer d-flex align-items-center">
-            <p class="m-0 text-secondary">
-                Showing <span>{{ $products->firstItem() }}</span> to <span>{{ $products->lastItem() }}</span> of <span>{{ $products->total() }}</span> entries
+        <div class="card-footer d-flex align-items-center"> <p class="m-0 text-secondary">
+                Mostrando <span>{{ $products->firstItem() }}</span> a <span>{{ $products->lastItem() }}</span> de <span>{{ $products->total() }}</span> registros
             </p>
 
             <ul class="pagination m-0 ms-auto">

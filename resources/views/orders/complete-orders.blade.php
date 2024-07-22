@@ -57,7 +57,7 @@
                             <th scope="col" class="text-center">{{ __('Date') }}</th>
                             <th scope="col" class="text-center">{{ __('Payment') }}</th>
                             <th scope="col" class="text-center">{{ __('Total') }}</th>
-                            <th scope="col" class="text-center">{{ __('Action') }}</th>
+                            <th scope="col" class="text-center">{{ __('Acciones') }}</th>
                         </tr>
                     </thead>
                     <tbody>

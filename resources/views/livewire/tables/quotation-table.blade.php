@@ -2,7 +2,7 @@
     <div class="card-header">
         <div>
             <h3 class="card-title">
-                {{ __('Quotations') }}
+                {{ __('Cotizaciones') }}
             </h3>
         </div>
 
@@ -14,20 +14,20 @@
     <div class="card-body border-bottom py-3">
         <div class="d-flex">
             <div class="text-secondary">
-                Show
-                <div class="mx-2 d-inline-block">
-                    <select wire:model.live="perPage" class="form-select form-select-sm" aria-label="result per page">
-                        <option value="5">5</option>
-                        <option value="10">10</option>
-                        <option value="15">15</option>
-                        <option value="25">25</option>
-                    </select>
+                    Mostrar
+                    <div class="mx-2 d-inline-block">
+                        <select wire:model.live="perPage" class="form-select form-select-sm" aria-label="result per page">
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                            <option value="150">150</option>
+                            <option value="250">250</option>
+                        </select>
+                    </div>
+                    registros
                 </div>
-                entries
-            </div>
-            <div class="ms-auto text-secondary">
-                Search:
-                <div class="ms-2 d-inline-block">
+                <div class="ms-auto text-secondary">
+                    Buscar:
+                    <div class="ms-2 d-inline-block">
                     <input type="text" wire:model.live="search" class="form-control form-control-sm" aria-label="Search invoice">
                 </div>
             </div>
@@ -41,40 +41,40 @@
             <thead class="thead-light">
             <tr>
                 <th class="align-middle text-center w-1">
-                    {{ __('No.') }}
+                    {{ __('ID') }}
                 </th>
                 <th scope="col" class="align-middle text-center">
                     <a wire:click.prevent="sortBy('reference')" href="#" role="button">
-                        {{ __('Quotation No.') }}
+                        {{ __('Cotización No.') }}
                         @include('inclues._sort-icon', ['field' => 'reference'])
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center">
                     <a wire:click.prevent="sortBy('date')" href="#" role="button">
-                        {{ __('Date') }}
+                        {{ __('Fecha') }}
                         @include('inclues._sort-icon', ['field' => 'date'])
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center">
                     <a wire:click.prevent="sortBy('customer_name')" href="#" role="button">
-                        {{ __('Customer name') }}
+                        {{ __('Cliente') }}
                         @include('inclues._sort-icon', ['field' => 'customer_name'])
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center">
                     <a wire:click.prevent="sortBy('total_amount')" href="#" role="button">
-                        {{ __('Total amount') }}
+                        {{ __('Total') }}
                         @include('inclues._sort-icon', ['field' => 'total_amount'])
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center">
                     <a wire:click.prevent="sortBy('status')" href="#" role="button">
-                        {{ __('Status') }}
+                        {{ __('Estado') }}
                         @include('inclues._sort-icon', ['field' => 'status'])
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center">
-                    {{ __('Action') }}
+                    {{ __('Acciones') }}
                 </th>
             </tr>
             </thead>
@@ -82,7 +82,7 @@
             @forelse ($quotations as $quotation)
                 <tr>
                     <td class="align-middle text-center">
-                        {{ $loop->iteration }}
+                        {{ $quotation->id }}
                     </td>
                     <td class="align-middle text-center">
                         {{ $quotation->reference }}
@@ -94,7 +94,7 @@
                         {{ $quotation->customer->name }}
                     </td>
                     <td class="align-middle text-center">
-                        {{ Number::currency($quotation->total_amount, 'EUR') }}
+                        {{ Number::currency($quotation->total_amount, 'MXN') }}
                     </td>
                     <td class="align-middle text-center">
                         {{-- <span class="badge {{ $quotation->status === \App\Enums\QuotationStatus::PENDING ? 'bg-orange' : 'bg-green' }} text-white text-uppercase"> --}}
@@ -106,25 +106,24 @@
                         <x-button.show class="btn-icon" route="{{ route('quotations.show', $quotation->uuid) }}"/>
                         @if ($quotation->status === \App\Enums\QuotationStatus::PENDING)
                             {{-- <x-button.edit class="btn-icon" route="{{ route('quotations.edit', $quotation->uuid) }}"/> --}}
-                            <x-button.complete class="btn-icon" route="{{ route('quotations.update', $quotation->uuid) }}" onclick="return confirm('Are you sure to complete quotation no. {{ $quotation->reference }}?')"/>
-                            <x-button.delete class="btn-icon" route="{{ route('quotations.destroy', $quotation) }}" onclick="return confirm('Are you sure to cancel Quotation NO. {{ $quotation->reference }}?')"/>
+                            <x-button.complete class="btn-icon" route="{{ route('quotations.update', $quotation->uuid) }}" onclick="return confirm('¿Deseas completar la cotización {{ $quotation->reference }}?')"/>
+                            <x-button.delete class="btn-icon" route="{{ route('quotations.destroy', $quotation) }}" onclick="return confirm('¿Deseas eliminar la cotización {{ $quotation->reference }}?')"/>
                         @endif
                     </td>
                 </tr>
             @empty
                 <tr>
                     <td class="align-middle text-center" colspan="8">
-                        No results found
-                    </td>
+                            No se encontraron resultados
+                        </td>
                 </tr>
             @endforelse
             </tbody>
         </table>
     </div>
 
-    <div class="card-footer d-flex align-items-center">
-        <p class="m-0 text-secondary">
-            Showing <span>{{ $quotations->firstItem() }}</span> to <span>{{ $quotations->lastItem() }}</span> of <span>{{ $quotations->total() }}</span> entries
+    <div class="card-footer d-flex align-items-center"> <p class="m-0 text-secondary">
+                Mostrando <span>{{ $quotations->firstItem() }}</span> a <span>{{ $quotations->lastItem() }}</span> de <span>{{ $quotations->total() }}</span> registros
         </p>
 
         <ul class="pagination m-0 ms-auto">

@@ -170,7 +170,7 @@
                         <input type="hidden" name="id" value="{{ $purchase->id }}">
 
                         <button type="submit"
-                                class="btn btn-success"
+                                class="btn btn-primary"
                                 onclick="return confirm('Are you sure you want to approve this purchase?')"
                         >
                             {{ __('Approve Purchase') }}

@@ -83,7 +83,7 @@
                         @method('put')
                         <input type="hidden" name="id" value="{{ $purchase->id }}">
                         <!-- Submit button -->
-                        <button type="submit" class="btn btn-success" onclick="return confirm('Are you sure you want to approve this purchase?')">Approve Purchase</button>
+                        <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure you want to approve this purchase?')">Approve Purchase</button>
                         <a class="btn btn-primary" href="{{ URL::previous() }}">Back</a>
                     </form>
                     @else
@@ -127,7 +127,7 @@
                                         <td scope="row">{{ $item->product->product_name }}</td>
                                         <td scope="row">{{ $item->product->product_code }}</td>
                                         <td scope="row"><span class="btn btn-warning">{{ $item->product->stock }}</span></td>
-                                        <td scope="row"><span class="btn btn-success">{{ $item->quantity }}</span></td>
+                                        <td scope="row"><span class="btn btn-primary">{{ $item->quantity }}</span></td>
                                         <td scope="row">{{ $item->unitcost }}</td>
                                         <td scope="row">
                                             <span  class="btn btn-primary">{{ $item->total }}</span>

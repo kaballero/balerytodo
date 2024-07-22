@@ -29,21 +29,28 @@ class ProductImportController extends Controller
             $sheet        = $spreadsheet->getActiveSheet();
             $row_limit    = $sheet->getHighestDataRow();
             $row_range    = range(2, $row_limit);
-            $startcount = 2;
+            $startcount = 1;
             $data = array();
             foreach ($row_range as $row) {
                 $data[] = [
-                    'name'          => $sheet->getCell('A' . $row)->getValue(),
-                    'slug'          => $sheet->getCell('B' . $row)->getValue(),
-                    'category_id'   => $sheet->getCell('C' . $row)->getValue(),
-                    'unit_id'       => $sheet->getCell('D' . $row)->getValue(),
-                    'code'          => $sheet->getCell('E' . $row)->getValue(),
-                    'quantity'      => $sheet->getCell('F' . $row)->getValue(),
-                    "quantity_alert" => $sheet->getCell('G' . $row)->getValue(),
-                    'buying_price'  => $sheet->getCell('H' . $row)->getValue(),
-                    'selling_price' => $sheet->getCell('I' . $row)->getValue(),
-                    'product_image' => $sheet->getCell('J' . $row)->getValue(),
-                    'notes' => $sheet->getCell('K' . $row)->getValue(),
+					'brand_id'      => $sheet->getCell('A' . $row)->getValue(),
+					'country'       => $sheet->getCell('B' . $row)->getValue(),
+					'quality'       => $sheet->getCell('C' . $row)->getValue(),
+                    'name'          => $sheet->getCell('D' . $row)->getValue(),
+                    'slug'          => $sheet->getCell('E' . $row)->getValue(),
+                    'category_id'   => $sheet->getCell('F' . $row)->getValue(),
+                    'unit_id'       => $sheet->getCell('G' . $row)->getValue(),
+                    'code'          => $sheet->getCell('H' . $row)->getValue(),
+                    'quantity'      => $sheet->getCell('I' . $row)->getValue(),
+                    "quantity_alert" => $sheet->getCell('J' . $row)->getValue(),
+                    'buying_price'  => $sheet->getCell('K' . $row)->getValue(),
+                    'selling_price' => $sheet->getCell('L' . $row)->getValue(),
+					'tax'           => $sheet->getCell('M' . $row)->getValue(),
+					'tax_type'      => $sheet->getCell('N' . $row)->getValue(),
+                    'notes'         => $sheet->getCell('O' . $row)->getValue(),
+					'box'           => $sheet->getCell('P' . $row)->getValue(),
+					'registry'      => $sheet->getCell('Q' . $row)->getValue(),
+					'site'          => $sheet->getCell('R' . $row)->getValue(),
                 ];
                 $startcount++;
             }
@@ -52,6 +59,8 @@ class ProductImportController extends Controller
                 Product::firstOrCreate([
                     "slug" => $product["slug"],
                     "code" => $product["code"],
+					"uuid" => Str::uuid(),
+					"user_id" => auth()->id(),
                 ], $product);
             }
         } catch (Exception $e) {

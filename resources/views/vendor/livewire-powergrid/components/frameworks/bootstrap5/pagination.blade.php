@@ -33,7 +33,7 @@
                     <li
                         class="page-item disabled"
                         aria-disabled="true"
-                        aria-label="@lang('pagination.previous')"
+                        aria-label="@lang('Anterior')"
                     >
                         <span
                             class="page-link"
@@ -48,7 +48,7 @@
                             wire:click="previousPage"
                             wire:loading.attr="disabled"
                             rel="prev"
-                            aria-label="@lang('pagination.previous')"
+                            aria-label="@lang('Anterior')"
                         >
                             &lsaquo;
                         </button>
@@ -101,7 +101,7 @@
                             wire:click="nextPage"
                             wire:loading.attr="disabled"
                             rel="next"
-                            aria-label="@lang('pagination.next')"
+                            aria-label="@lang('Siguiente')"	
                         >&rsaquo;
                         </button>
                     </li>
@@ -109,7 +109,7 @@
                     <li
                         class="page-item disabled"
                         aria-disabled="true"
-                        aria-label="@lang('pagination.next')"
+                        aria-label="@lang('Siguiente')"
                     >
                         <span
                             class="page-link"
@@ -131,7 +131,7 @@
                             type="button"
                             class="page-link"
                             rel="prev"
-                            aria-label="@lang('pagination.previous')"
+                            aria-label="@lang('Anterior')"
                         >
                             &lsaquo;
                         </button>
@@ -145,7 +145,7 @@
                                 wire:click="setPage('{{ $paginator->previousCursor()->encode() }}','{{ $paginator->getCursorName() }}')"
                                 wire:loading.attr="disabled"
                                 rel="prev"
-                                aria-label="@lang('pagination.previous')"
+                                aria-label="@lang('Anterior')"
                             >
                                 &lsaquo;
                             </button>
@@ -158,7 +158,7 @@
                                 wire:click="previousPage('{{ $paginator->getPageName() }}')"
                                 wire:loading.attr="disabled"
                                 rel="prev"
-                                aria-label="@lang('pagination.previous')"
+                                aria-label="@lang('Anterior')"
                             >
                                 &lsaquo;
                             </button>
@@ -176,7 +176,7 @@
                                 wire:click="setPage('{{ $paginator->nextCursor()->encode() }}','{{ $paginator->getCursorName() }}')"
                                 wire:loading.attr="disabled"
                                 rel="next"
-                                aria-label="@lang('pagination.next')"
+                                aria-label="@lang('Siguiente')"
                             >&rsaquo;
                             </button>
                         </li>
@@ -188,7 +188,7 @@
                                 wire:click="nextPage('{{ $paginator->getPageName() }}')"
                                 wire:loading.attr="disabled"
                                 rel="next"
-                                aria-label="@lang('pagination.next')"
+                                aria-label="@lang('Siguiente')"
                             >&rsaquo;
                             </button>
                         </li>
@@ -199,7 +199,7 @@
                             type="button"
                             class="page-link"
                             rel="next"
-                            aria-label="@lang('pagination.next')"
+                            aria-label="@lang('Siguiente')"
                         >&rsaquo;
                         </button>
                     </li>

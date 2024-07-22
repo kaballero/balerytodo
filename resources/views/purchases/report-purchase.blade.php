@@ -13,7 +13,7 @@
                 </div>
             </div>
 
-            @include('partials._breadcrumbs')
+            
         </div>
     </div>
 </header>
@@ -51,7 +51,7 @@
                         </div>
 
                         <button class="btn btn-primary" type="submit">Save</button>
-                        <a class="btn btn-danger" href="{{ URL::previous() }}">Cancel</a>
+                        <a class="btn btn-primary" href="{{ URL::previous() }}">Cancel</a>
                     </div>
                 </div>
             </div>

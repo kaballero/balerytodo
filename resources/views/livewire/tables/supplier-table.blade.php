@@ -14,20 +14,20 @@
     <div class="card-body border-bottom py-3">
         <div class="d-flex">
             <div class="text-secondary">
-                Show
-                <div class="mx-2 d-inline-block">
-                    <select wire:model.live="perPage" class="form-select form-select-sm" aria-label="result per page">
-                        <option value="5">5</option>
-                        <option value="10">10</option>
-                        <option value="15">15</option>
-                        <option value="25">25</option>
-                    </select>
+                    Mostrar
+                    <div class="mx-2 d-inline-block">
+                        <select wire:model.live="perPage" class="form-select form-select-sm" aria-label="result per page">
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                            <option value="150">150</option>
+                            <option value="250">250</option>
+                        </select>
+                    </div>
+                    registros
                 </div>
-                entries
-            </div>
-            <div class="ms-auto text-secondary">
-                Search:
-                <div class="ms-2 d-inline-block">
+                <div class="ms-auto text-secondary">
+                    Buscar:
+                    <div class="ms-2 d-inline-block">
                     <input type="text" wire:model.live="search" class="form-control form-control-sm" aria-label="Search invoice">
                 </div>
             </div>
@@ -45,7 +45,7 @@
                 </th>
                 <th scope="col" class="align-middle text-center">
                     <a wire:click.prevent="sortBy('name')" href="#" role="button">
-                        {{ __('Name') }}
+                        {{ __('Nombre') }}
                         @include('inclues._sort-icon', ['field' => 'name'])
                     </a>
                 </th>
@@ -69,12 +69,12 @@
                 </th>
                 <th scope="col" class="align-middle text-center">
                     <a wire:click.prevent="sortBy('created_at')" href="#" role="button">
-                        {{ __('Created at') }}
+                        {{ __('Fecha') }}
                         @include('inclues._sort-icon', ['field' => 'created_at'])
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center">
-                    {{ __('Action') }}
+                    {{ __('Acciones') }}
                 </th>
             </tr>
             </thead>
@@ -116,17 +116,16 @@
             @empty
                 <tr>
                     <td class="align-middle text-center" colspan="8">
-                        No results found
-                    </td>
+                            No se encontraron resultados
+                        </td>
                 </tr>
             @endforelse
             </tbody>
         </table>
     </div>
 
-    <div class="card-footer d-flex align-items-center">
-        <p class="m-0 text-secondary">
-            Showing <span>{{ $suppliers->firstItem() }}</span> to <span>{{ $suppliers->lastItem() }}</span> of <span>{{ $suppliers->total() }}</span> entries
+    <div class="card-footer d-flex align-items-center"> <p class="m-0 text-secondary">
+                Mostrando <span>{{ $suppliers->firstItem() }}</span> a <span>{{ $suppliers->lastItem() }}</span> de <span>{{ $suppliers->total() }}</span> registros
         </p>
 
         <ul class="pagination m-0 ms-auto">

@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+		 if (!Schema::hasTable('products')) {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->uuid();
@@ -18,8 +19,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('code');
+			$table->string('country');
             //$table->string('product_barcode_symbology')->nullable();
             $table->integer('quantity');
+			$table->integer('quality');
             $table->integer('buying_price')->comment('Buying Price');
             $table->integer('selling_price')->comment('Selling Price');
             $table->integer('quantity_alert');
@@ -33,12 +36,17 @@ return new class extends Migration
                 ->nullable()
                 ->constrained()
                 ->nullOnDelete();
+			
+			$table->foreignIdFor(\App\Models\Brand::class)
+                ->nullable()
+                ->constrained()
+                ->nullOnDelete();
 
             $table->foreignIdFor(\App\Models\Unit::class)->constrained()
                 ->cascadeOnDelete();
             $table->timestamps();
         });
-    }
+    }}
 
     /**
      * Reverse the migrations.

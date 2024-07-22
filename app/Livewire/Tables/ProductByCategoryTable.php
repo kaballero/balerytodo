@@ -10,7 +10,7 @@ class ProductByCategoryTable extends Component
 {
     use WithPagination;
 
-    public $perPage = 5;
+    public $perPage = 50;
 
     public $search = '';
 

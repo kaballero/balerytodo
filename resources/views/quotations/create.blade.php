@@ -6,12 +6,12 @@
         <div class="row g-2 align-items-center mb-3">
             <div class="col">
                 <h2 class="page-title">
-                    {{ __('New Quotation') }}
+                    {{ __('Nueva Cotización') }}
                 </h2>
             </div>
         </div>
 
-        @include('partials._breadcrumbs')
+        
     </div>
 </div>
 
@@ -35,7 +35,7 @@
                 <div class="col">
                     <div class="card mb-4">
                         <div class="card-header">
-                            Products
+                            Productos
                         </div>
                         <div class="card-body">
                             <livewire:search-product/>
@@ -53,7 +53,7 @@
                                 <div class="row gx-3 mb-3">
                                     <div class="col">
                                         <label class="small mb-1" for="date">
-                                            Date
+                                            Fecha
                                             <span class="text-danger">*</span>
                                         </label>
 
@@ -73,13 +73,13 @@
 
                                     <div class="col">
                                         <label class="small mb-1" for="customer_id">
-                                            Customer
+                                            Cliente
                                             <span class="text-danger">*</span>
                                         </label>
 
                                         <select class="form-select @error('customer_id') is-invalid @enderror" id="customer_id" name="customer_id">
                                             <option selected="" disabled="">
-                                                Select a customer:
+                                                Seleccionar Cliente:
                                             </option>
 
                                             @foreach ($customers as $customer)
@@ -98,14 +98,14 @@
 
                                     <div class="col">
                                         <label for="status" class="small mb-1">
-                                            Status
+                                            Estado
                                             <span class="text-danger">*</span>
                                         </label>
 
                                         {{---
                                         <select class="form-select" name="status" id="status" required>
-                                            <option value="Pending">Pending</option>
-                                            <option value="Sent">Sent</option>
+                                            <option value="Pending">Pendiente</option>
+                                            <option value="Sent">Enviada</option>
                                         </select>
                                         ---}}
 
@@ -120,14 +120,14 @@
 
                                     <div class="col">
                                         <label for="reference" class="small mb-1">
-                                            {{ __('Reference') }}
+                                            {{ __('Referencia') }}
                                         </label>
 
                                         <input type="text"
                                                id="reference"
                                                name="reference"
                                                class="form-control"
-                                               value="QT"
+                                               value="CT"
                                                readonly
                                         >
 
@@ -144,7 +144,7 @@
                                 <div class="col-md-12 mt-4">
                                     <div class="form-group">
                                         <label for="note">
-                                            {{ __('Notes') }}
+                                            {{ __('Notas') }}
                                         </label>
                                         <textarea name="note" id="note" rows="5" class="form-control"></textarea>
                                     </div>
@@ -153,7 +153,7 @@
                                 <div class="col-md-12 mt-4">
                                     <div class="d-flex flex-wrap">
                                         <button type="submit" class="btn btn-success add-list mx-1">
-                                            {{ __('Create Quotation') }}
+                                            {{ __('Crear Cotización') }}
                                         </button>
                                     </div>
                                 </div>

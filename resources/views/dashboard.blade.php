@@ -6,20 +6,20 @@
             <div class="row g-2 align-items-center">
                 <div class="col">
                     <div class="page-pretitle">
-                        Overview
+                        Balerytodo
                     </div>
                     <h2 class="page-title">
-                        Dashboard
+                        Inicio
                     </h2>
                 </div>
                 <!-- Page title actions -->
                 <div class="col-auto ms-auto d-print-none">
                     <div class="btn-list">
-                        <a href="{{ route('orders.create') }}" class="btn btn-primary d-none d-sm-inline-block">
+                        <a href="{{ route('products.create') }}" class="btn btn-primary d-none d-sm-inline-block">
                             <x-icon.plus />
-                            Create new order
+                            Registrar Nuevo Producto
                         </a>
-                        <a href="{{ route('orders.create') }}" class="btn btn-primary d-sm-none btn-icon"
+                        <a href="{{ route('products.create') }}" class="btn btn-primary d-sm-none btn-icon"
                             aria-label="Create new report">
                             <x-icon.plus />
                         </a>
@@ -36,14 +36,14 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex align-items-center">
-                                <div class="subheader">Sales</div>
+                                <div class="subheader">Ventas</div>
                                 <div class="ms-auto lh-1">
                                     <div class="dropdown">
-                                        <a class="dropdown-toggle text-muted" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Last 7 days</a>
+                                        <a class="dropdown-toggle text-muted" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Últimos 7 días</a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a class="dropdown-item active" href="#">Last 7 days</a>
-                                            <a class="dropdown-item" href="#">Last 30 days</a>
-                                            <a class="dropdown-item" href="#">Last 3 months</a>
+                                            <a class="dropdown-item active" href="#">Últimos 7 días</a>
+                                            <a class="dropdown-item" href="#">Últimos 3 días</a>
+                                            <a class="dropdown-item" href="#">Últimos 3 meses</a>
                                         </div>
                                     </div>
                                 </div>
@@ -184,10 +184,10 @@
                                         </div>
                                         <div class="col">
                                             <div class="font-weight-medium">
-                                                {{ $products }} Products
+                                                {{ $products }} Productos
                                             </div>
                                             <div class="text-muted">
-                                                {{ $categories }} categories
+                                                {{ $categories }} categorías
                                             </div>
                                         </div>
                                     </div>
@@ -215,10 +215,10 @@
                                         </div>
                                         <div class="col">
                                             <div class="font-weight-medium">
-                                                {{ $orders }} Orders
+                                                {{ $orders }} Ventas
                                             </div>
                                             <div class="text-muted">
-                                                {{ $todayOrders }} shipped
+                                                {{ $todayOrders }} completadas
                                             </div>
                                         </div>
                                     </div>
@@ -247,10 +247,10 @@
                                         </div>
                                         <div class="col">
                                             <div class="font-weight-medium">
-                                                {{ $purchases }} Purchases
+                                                {{ $purchases }} Compras
                                             </div>
                                             <div class="text-muted">
-                                                {{ $todayPurchases }} today
+                                                {{ $todayPurchases }} hoy
                                             </div>
                                         </div>
                                     </div>
@@ -279,10 +279,10 @@
                                         </div>
                                         <div class="col">
                                             <div class="font-weight-medium">
-                                                {{ $quotations }} Quotations
+                                                {{ $quotations }} Cotizaciones
                                             </div>
                                             <div class="text-muted">
-                                                {{ $todayQuotations }} today
+                                                {{ $todayQuotations }} hoy
                                             </div>
                                         </div>
                                     </div>

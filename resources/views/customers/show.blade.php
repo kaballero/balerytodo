@@ -11,7 +11,7 @@
                 </div>
             </div>
 
-            @include('partials._breadcrumbs', ['model' => $customer])
+            
         </div>
     </div>
 
@@ -23,7 +23,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="card-title">
-                                    {{ __('Profile Image') }}
+                                    {{ __('Imagen de Perfil') }}
                                 </h3>
 
                                 <img id="image-preview"

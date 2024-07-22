@@ -94,7 +94,7 @@
                                             <th scope="col" class="text-center">{{ __('Price') }}</th>
                                             <th scope="col" class="text-center">{{ __('SubTotal') }}</th>
                                             <th scope="col" class="text-center">
-                                                {{ __('Action') }}
+                                                {{ __('Acciones') }}
                                             </th>
                                         </tr>
                                     </thead>

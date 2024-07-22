@@ -130,7 +130,7 @@
                             </div>
                             <div class="card-footer text-end">
                                 <x-button type="submit">
-                                    {{ __('Save') }}
+                                    {{ __('Guardar') }}
                                 </x-button>
                             </div>
                         </div>

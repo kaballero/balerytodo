@@ -11,7 +11,7 @@
             </div>
         </div>
 
-        @include('partials._breadcrumbs')
+        
     </div>
 </div>
 
@@ -68,7 +68,7 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="name" class="form-label">
-                                                {{ __('Name') }}
+                                                {{ __('Nombre') }}
                                                 <span class="text-danger">*</span>
                                             </label>
 
@@ -174,11 +174,11 @@
 
                             <div class="card-footer text-end">
                                 <button class="btn btn-primary" type="submit">
-                                    {{ __('Create') }}
+                                    {{ __('Crear') }}
                                 </button>
 
-                                <a class="btn btn-outline-warning" href="{{ route('users.index') }}">
-                                    {{ __('Cancel') }}
+                                <a class="btn btn-outline-primary" href="{{ route('users.index') }}">
+                                    {{ __('Cancelar') }}
                                 </a>
                             </div>
                         </div>

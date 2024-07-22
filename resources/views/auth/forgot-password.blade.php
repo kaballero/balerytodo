@@ -6,7 +6,7 @@
 
     <div class="card-body">
         <h2 class="card-title text-center mb-4">
-            Forgot password
+            Cambiar contraseña
         </h2>
 
         <p class="text-secondary mb-4">

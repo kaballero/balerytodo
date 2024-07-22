@@ -16,17 +16,17 @@ $scrollIntoViewJsSnippet = ($scrollTo !== false)
             <ul class="pagination m-0 ms-auto">
                 {{-- Previous Page Link --}}
                 @if ($paginator->onFirstPage())
-                <li class="page-item disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
+                <li class="page-item disabled" aria-disabled="true" aria-label="@lang('Anterior')">
                     <span class="page-link" aria-hidden="true">
                         <x-icon.chevron-left />
-                        prev
+                        Ant.
                     </span>
                 </li>
                 @else
                     <li class="page-item">
-                        <button type="button" dusk="previousPage{{ $paginator->getPageName() == 'page' ? '' : '.' . $paginator->getPageName() }}" class="page-link" wire:click="previousPage('{{ $paginator->getPageName() }}')" x-on:click="{{ $scrollIntoViewJsSnippet }}" wire:loading.attr="disabled" rel="prev" aria-label="@lang('pagination.previous')">
+                        <button type="button" dusk="previousPage{{ $paginator->getPageName() == 'page' ? '' : '.' . $paginator->getPageName() }}" class="page-link" wire:click="previousPage('{{ $paginator->getPageName() }}')" x-on:click="{{ $scrollIntoViewJsSnippet }}" wire:loading.attr="disabled" rel="prev" aria-label="@lang('Anterior')">
                             <x-icon.chevron-left />
-                            prev
+                            Ant.
                         </button>
                     </li>
                 @endif
@@ -59,14 +59,14 @@ $scrollIntoViewJsSnippet = ($scrollTo !== false)
                                 dusk="nextPage{{ $paginator->getPageName() == 'page' ? '' : '.' . $paginator->getPageName() }}"
                                 class="page-link" wire:click="nextPage('{{ $paginator->getPageName() }}')" x-on:click="{{ $scrollIntoViewJsSnippet }}"
                                 wire:loading.attr="disabled"
-                                rel="next" aria-label="@lang('pagination.next')">
-                            next
+                                rel="next" aria-label="@lang('Siguiente')">
+                            Sig.
                             <x-icon.chevron-right />
                         </button>
                     </li>
                 @else
                     <button type="button" class="page-link disabled">
-                        next
+                        Sig.
                         <x-icon.chevron-right />
                     </button>
                 @endif

@@ -11,7 +11,7 @@
             </div>
         </div>
 
-        @include('partials._breadcrumbs')
+        
     </div>
 </div>
 
@@ -136,11 +136,11 @@
                             </div>
                             <div class="card-footer text-end">
                                 <button class="btn btn-primary" type="submit">
-                                    {{ __('Save') }}
+                                    {{ __('Guardar') }}
                                 </button>
 
-                                <a class="btn btn-outline-warning" href="{{ route('suppliers.index') }}">
-                                    {{ __('Cancel') }}
+                                <a class="btn btn-outline-primary" href="{{ route('suppliers.index') }}">
+                                    {{ __('Cancelar') }}
                                 </a>
                             </div>
                         </div>

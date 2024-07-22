@@ -58,7 +58,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn me-auto" data-bs-dismiss="modal">
-                        {{ __('Cancel') }}
+                        {{ __('Cancelar') }}
                     </button>
 
 {{--                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">--}}

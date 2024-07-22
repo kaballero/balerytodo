@@ -68,11 +68,11 @@
                                 </div>
                                 <div class="card-footer text-end">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Save') }}
+                                        {{ __('Guardar') }}
                                     </button>
 
-                                    <a class="btn btn-outline-warning" href="{{ route('users.index') }}">
-                                        {{ __('Cancel') }}
+                                    <a class="btn btn-outline-primary" href="{{ route('users.index') }}">
+                                        {{ __('Cancelar') }}
                                     </a>
                                 </div>
                             </div>
@@ -104,11 +104,11 @@
                                 <div class="card-footer text-end">
                                     {{--- onclick="return confirm('Do you want to change the password?')" ---}}
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Save') }}
+                                        {{ __('Guardar') }}
                                     </button>
 
-                                    <a class="btn btn-outline-warning" href="{{ route('users.index') }}">
-                                        {{ __('Cancel') }}
+                                    <a class="btn btn-outline-primary" href="{{ route('users.index') }}">
+                                        {{ __('Cancelar') }}
                                     </a>
                                 </div>
                             </div>

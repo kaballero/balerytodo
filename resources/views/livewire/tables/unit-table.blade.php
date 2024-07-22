@@ -2,7 +2,7 @@
     <div class="card-header">
         <div>
             <h3 class="card-title">
-                {{ __('Units') }}
+                {{ __('Unidades') }}
             </h3>
         </div>
 
@@ -14,20 +14,20 @@
     <div class="card-body border-bottom py-3">
         <div class="d-flex">
             <div class="text-secondary">
-                Show
-                <div class="mx-2 d-inline-block">
-                    <select wire:model.live="perPage" class="form-select form-select-sm" aria-label="result per page">
-                        <option value="5">5</option>
-                        <option value="10">10</option>
-                        <option value="15">15</option>
-                        <option value="25">25</option>
-                    </select>
+                    Mostrar
+                    <div class="mx-2 d-inline-block">
+                        <select wire:model.live="perPage" class="form-select form-select-sm" aria-label="result per page">
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                            <option value="150">150</option>
+                            <option value="250">250</option>
+                        </select>
+                    </div>
+                    registros
                 </div>
-                entries
-            </div>
-            <div class="ms-auto text-secondary">
-                Search:
-                <div class="ms-2 d-inline-block">
+                <div class="ms-auto text-secondary">
+                    Buscar:
+                    <div class="ms-2 d-inline-block">
                     <input type="text" wire:model.live="search" class="form-control form-control-sm" aria-label="Search invoice">
                 </div>
             </div>
@@ -45,7 +45,7 @@
                 </th>
                 <th scope="col" class="align-middle text-center">
                     <a wire:click.prevent="sortBy('name')" href="#" role="button">
-                        {{ __('Name') }}
+                        {{ __('Nombre') }}
                         @include('inclues._sort-icon', ['field' => 'name'])
                     </a>
                 </th>
@@ -57,12 +57,12 @@
                 </th>
                 <th scope="col" class="align-middle text-center">
                     <a wire:click.prevent="sortBy('short_code')" href="#" role="button">
-                        {{ __('Short Code') }}
+                        {{ __('Abreviación') }}
                         @include('inclues._sort-icon', ['field' => 'short_code'])
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center">
-                    {{ __('Action') }}
+                    {{ __('Acciones') }}
                 </th>
             </tr>
             </thead>
@@ -90,8 +90,8 @@
             @empty
                 <tr>
                     <td class="align-middle text-center" colspan="8">
-                        No results found
-                    </td>
+                            No se encontraron resultados
+                        </td>
                 </tr>
             @endforelse
             </tbody>
@@ -100,7 +100,7 @@
 
     <div class="card-footer d-flex align-items-center">
         <p class="m-0 text-secondary d-none d-sm-block">
-            Showing <span>{{ $units->firstItem() }}</span> to <span>{{ $units->lastItem() }}</span> of <span>{{ $units->total() }}</span> entries
+            Mostrando <span>{{ $units->firstItem() }}</span> a <span>{{ $units->lastItem() }}</span> de <span>{{ $units->total() }}</span> registros
         </p>
 
         <ul class="pagination m-0 ms-auto">

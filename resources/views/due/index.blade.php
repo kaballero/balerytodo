@@ -5,7 +5,7 @@
     @if($orders->isEmpty())
     {{-- <x-empty
         title="No orders found"
-        message="Try adjusting your search or filter to find what you're looking for."
+        message="Intenta ajustar la búsqueda o filtro para encontrar lo que buscas."
         button_label="{{ __('Add your first Order') }}"
         button_route="{{ route('orders.create') }}"
     /> --}}

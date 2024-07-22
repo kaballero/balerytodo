@@ -18,7 +18,10 @@ class Product extends Model
         'name',
         'slug',
         'code',
+		'sku',
+		'country',
         'quantity',
+		'quality',
         'quantity_alert',
         'buying_price',
         'selling_price',
@@ -27,24 +30,35 @@ class Product extends Model
         'notes',
         'product_image',
         'category_id',
+		'brand_id',
         'unit_id',
         'created_at',
         'updated_at',
         "user_id",
-        "uuid"
+        "uuid",
+		"box",
+		"registry",
+		'site',
+		"package",
+		"pieces"
     ];
 
     protected $casts = [
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
-        'tax_type' => TaxType::class
+        'tax_type' => TaxType::class,
+		'buying_price' => 'decimal:2',
+        'selling_price' => 'decimal:2'
     ];
 
     public function getRouteKeyName(): string
     {
         return 'slug';
     }
-
+    public function brand()
+    {
+        return $this->belongsTo(Brand::class);
+    }
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
@@ -55,26 +69,13 @@ class Product extends Model
         return $this->belongsTo(Unit::class);
     }
 
-    protected function buyingPrice(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($value) => $value / 100,
-            set: fn ($value) => $value * 100,
-        );
-    }
-
-    protected function sellingPrice(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($value) => $value / 100,
-            set: fn ($value) => $value * 100,
-        );
-    }
+   
 
     public function scopeSearch($query, $value): void
     {
         $query->where('name', 'like', "%{$value}%")
-            ->orWhere('code', 'like', "%{$value}%");
+            ->orWhere('code', 'like', "%{$value}%")
+			->orWhere('sku', 'like', "%{$value}%");
     }
      /**
      * Get the user that owns the Category

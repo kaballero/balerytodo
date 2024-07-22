@@ -7,7 +7,7 @@
             <div class="card-header">
                 <div>
                     <h3 class="card-title">
-                        {{ __('Create Unit') }}
+                        {{ __('Crear Unidad') }}
                     </h3>
                 </div>
 
@@ -19,10 +19,16 @@
             <form action="{{ route('units.store') }}" method="POST">
                 @csrf
                 <div class="card-body">
-                    <livewire:name />
+                    <x-input
+                        label="{{ __('Nombre') }}"
+                        id="name"
+                        name="name"
+                        :value="old('name')"
+                        required
+                    />
 
                     <x-input
-                        label="{{ __('Short Code') }}"
+                        label="{{ __('Abreviación') }}"
                         id="short_code"
                         name="short_code"
                         :value="old('short_code')"
@@ -31,7 +37,7 @@
                 </div>
                 <div class="card-footer text-end">
                     <x-button type="submit">
-                        {{ __('Create') }}
+                        {{ __('Crear') }}
                     </x-button>
                 </div>
             </form>

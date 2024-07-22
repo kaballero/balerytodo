@@ -170,7 +170,7 @@
                             @method('put')
                             @csrf
 
-                            <button type="submit" class="btn btn-success"
+                            <button type="submit" class="btn btn-primary"
                                 onclick="return confirm('Are you sure you want to complete this order?')">
                                 {{ __('Complete Order') }}
                             </button>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\Dashboards\DashboardController;
 use App\Http\Controllers\InvoiceController;
@@ -47,7 +48,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard/', [DashboardController::class, 'index'])->name('dashboard');
 
     // User Management
-    // Route::resource('/users', UserController::class); //->except(['show']);
+    Route::resource('/users', UserController::class); //->except(['show']);
     Route::put('/user/change-password/{username}', [UserController::class, 'updatePassword'])->name('users.updatePassword');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -61,6 +62,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('/customers', CustomerController::class);
     Route::resource('/suppliers', SupplierController::class);
     Route::resource('/categories', CategoryController::class);
+	Route::resource('/brands', BrandController::class);
     Route::resource('/units', UnitController::class);
 
     // Route Products

@@ -8,7 +8,7 @@
                     <div class="col-auto mb-3">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="user"></i></div>
-                            Account Settings - Settings
+                            Configuración de Cuenta
                         </h1>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                     <div class="card-header">
                         <div>
                             <h3 class="card-title">
-                                {{ __('Change Password') }}
+                                {{ __('Cambiar contraseña') }}
                             </h3>
                         </div>
                     </div>
@@ -43,48 +43,48 @@
                         </div>
 
                         <div class="card-footer text-end">
-                            <x-button type="submit">{{ __('Save') }}</x-button>
+                            <x-button type="submit">{{ __('Guardar') }}</x-button>
                         </div>
                     </x-form>
                 </div>
             </div>
 
             <div class="col-lg-4">
-                <div class="card mb-4">
+               <!-- <div class="card mb-4">
                     <div class="card-header">
-                        Two-Factor Authentication
+                       Autenticación de 2 pasos
                     </div>
                     <div class="card-body">
                         <p>
-                            Add another level of security to your account by enabling two-factor authentication.
-                            We will send you a text message to verify your login attempts on unrecognized devices and
-                            browsers.
+                            Agregue otro nivel de seguridad a su cuenta habilitando la autenticación de dos factores.
+ Le enviaremos un mensaje de texto para verificar sus intentos de inicio de sesión en dispositivos no reconocidos y
+ navegadores.
                         </p>
                         <form>
                             <div class="form-check">
                                 <input class="form-check-input" id="twoFactorOn" type="radio" name="twoFactor"
                                     checked="" />
-                                <label class="form-check-label" for="twoFactorOn">On</label>
+                                <label class="form-check-label" for="twoFactorOn">Si</label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" id="twoFactorOff" type="radio" name="twoFactor" />
-                                <label class="form-check-label" for="twoFactorOff">Off</label>
+                                <label class="form-check-label" for="twoFactorOff">No</label>
                             </div>
                         </form>
                     </div>
-                </div>
+                </div>-->
 
                 <div class="card mb-4">
                     <div class="card-header">
-                        Delete Account
+                        Eliminar cuenta
                     </div>
                     <div class="card-body">
                         <p>
-                            Deleting your account is a permanent action and cannot be undone. If you are sure you want to
-                            delete your account, select the button below.
+                            Eliminar tu cuenta es una acción permanente y no se puede deshacer. Si estás seguro de que quieres
+ eliminar tu cuenta, da click en el botón a continuación.
                         </p>
                         <button type="button" class="btn btn-danger-soft text-danger">
-                            I understand, delete my account
+                            Eliminar cueenta
                         </button>
                     </div>
                 </div>

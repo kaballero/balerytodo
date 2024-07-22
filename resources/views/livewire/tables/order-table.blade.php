@@ -14,20 +14,20 @@
     <div class="card-body border-bottom py-3">
         <div class="d-flex">
             <div class="text-secondary">
-                Show
-                <div class="mx-2 d-inline-block">
-                    <select wire:model.live="perPage" class="form-select form-select-sm" aria-label="result per page">
-                        <option value="5">5</option>
-                        <option value="10">10</option>
-                        <option value="15">15</option>
-                        <option value="25">25</option>
-                    </select>
+                    Mostrar
+                    <div class="mx-2 d-inline-block">
+                        <select wire:model.live="perPage" class="form-select form-select-sm" aria-label="result per page">
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                            <option value="150">150</option>
+                            <option value="250">250</option>
+                        </select>
+                    </div>
+                    registros
                 </div>
-                entries
-            </div>
-            <div class="ms-auto text-secondary">
-                Search:
-                <div class="ms-2 d-inline-block">
+                <div class="ms-auto text-secondary">
+                    Buscar:
+                    <div class="ms-2 d-inline-block">
                     <input type="text" wire:model.live="search" class="form-control form-control-sm"
                         aria-label="Search invoice">
                 </div>
@@ -81,7 +81,7 @@
                         </a>
                     </th>
                     <th scope="col" class="align-middle text-center">
-                        {{ __('Action') }}
+                        {{ __('Acciones') }}
                     </th>
                 </tr>
             </thead>
@@ -126,7 +126,7 @@
                 @empty
                     <tr>
                         <td class="align-middle text-center" colspan="8">
-                            No results found
+                            No se encontraron resultados
                         </td>
                     </tr>
                 @endforelse
@@ -134,10 +134,8 @@
         </table>
     </div>
 
-    <div class="card-footer d-flex align-items-center">
-        <p class="m-0 text-secondary">
-            Showing <span>{{ $orders->firstItem() }}</span> to <span>{{ $orders->lastItem() }}</span> of
-            <span>{{ $orders->total() }}</span> entries
+    <div class="card-footer d-flex align-items-center"> <p class="m-0 text-secondary">
+                Mostrando <span>{{ $orders->firstItem() }}</span> a <span>{{ $orders->lastItem() }}</span> de <span>{{ $orders->total() }}</span> registros
         </p>
 
         <ul class="pagination m-0 ms-auto">
